@@ -6,8 +6,14 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  justify-content: center;
+  display: flex;
 }
-
+.inicio{
+  padding: 2rem;
+  background-color: rgb(204, 204, 204);
+  border-radius: 15px;
+}
 #container strong {
   font-size: 20px;
   line-height: 26px;
@@ -17,11 +23,27 @@
   font-size: 16px;
   line-height: 22px;
 
-  color: #8c8c8c;
+  color: #d8d8d8;
 
   margin: 0;
+  
 }
 
 #container a {
   text-decoration: none;
 }
+.item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;  
+}
+.item ion-input{
+  width: 80%;
+}
+.item .label{
+  width: 80%;
+  display: flex;
+  justify-content:flex-start;
+}
+

@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Asistencia
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +14,33 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="inicio">
+      <div class="item titulo">
+        <h3>
+          Iniciar Sesión
+        </h3>
+      </div>
+      <div class="item usuario">
+        <div class="label">
+          <ion-label>Usuario</ion-label>
+        </div>
+        <ion-input [(ngModel)]="usuario"></ion-input>
+      </div>
+      <div class="item contrasena">
+        <div class="label">
+          <ion-label>Usuario</ion-label>
+        </div>
+        <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
+      </div>
+      <div class="item recuperar">
+        <ion-button fill="clear">¿Olvidaste tu contraseña?</ion-button>
+      </div>
+      <div class="item">
+        <div class="botones">
+          <ion-button color="danger">Cancelar</ion-button>
+          <ion-button color="success">Ingresar</ion-button>
+        </div>
+      </div>
+    </div>
   </div>
 </ion-content>
