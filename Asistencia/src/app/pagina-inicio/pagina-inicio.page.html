@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="cabecera">
+      Aqui va una imagen o el logo del DuocUC
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">
+        PaginaInicio
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="contenedor">
+    <div class="menu">
+
+      <div class="item bienvenida">
+        <h1>
+          Bienvenido nombre
+        </h1>
+      </div>
+  
+      <div class="item bt">
+        <ion-button fill="outline" color="dark">Escanear QR</ion-button>
+      </div>
+      <div class="item bt">
+        <ion-button color="danger" (click)="antPagina()">Cerrar Sesión</ion-button>
+        <ion-button color="secondary" (click)="pagPrincipal()">Menu principal</ion-button>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

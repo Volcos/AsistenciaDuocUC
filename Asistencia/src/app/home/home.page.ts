@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,17 @@ export class HomePage {
 
   public usuario: string = "";
   public contrasena: string ="";
-  constructor() {}
+  constructor(private navCtrl: NavController) {}
 
+  sigPagina() {
+    this.navCtrl.navigateForward('/pagina-inicio');
+  }
+
+  antPagina() {
+    this.navCtrl.navigateBack('/home');
+  }
+
+  pagPrincipal() {
+    this.navCtrl.navigateRoot('/home');
+  }
 }
