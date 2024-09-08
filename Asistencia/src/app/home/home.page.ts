@@ -23,4 +23,8 @@ export class HomePage {
   pagPrincipal() {
     this.navCtrl.navigateRoot('/home');
   }
+
+  recuContra(){
+    this.navCtrl.navigateForward('/recuperar-contrasena')
+  }
 }

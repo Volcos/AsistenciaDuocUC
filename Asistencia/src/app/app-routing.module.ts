@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'pagina-inicio',
     loadChildren: () => import('./pagina-inicio/pagina-inicio.module').then( m => m.PaginaInicioPageModule)
   },
+  {
+    path: 'recuperar-contrasena',
+    loadChildren: () => import('./recuperar-contrasena/recuperar-contrasena.module').then( m => m.RecuperarContrasenaPageModule)
+  },
 
 ];
 

@@ -1,0 +1,19 @@
+.main{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60%;
+    background-color: rgb(204, 204, 204);
+    padding: 4rem;
+}
+.button{
+    display: flex;
+    justify-content: center;
+}
