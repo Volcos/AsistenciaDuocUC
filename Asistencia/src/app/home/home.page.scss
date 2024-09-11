@@ -1,6 +1,25 @@
+/*
+PALETA DE COLORES PRUEBA
+#f4e9cd
+#9DBEBB
+#77aca2
+#468189
+#031926
+*/
+
+.fondo{
+  height: 100%;
+  background-color:#9DBEBB;
+}
+.barra{
+  width: 100%;
+  height: 58px;
+  background-color:#468189
+  ;
+}
+
 #container {
   text-align: center;
-
   position: absolute;
   left: 0;
   right: 0;
@@ -11,7 +30,7 @@
 }
 .inicio{
   padding: 2rem;
-  background-color: rgb(204, 204, 204);
+  background-color: #ececea;
   border-radius: 15px;
 }
 #container strong {
@@ -38,6 +57,10 @@
   align-items: center;
   margin-top: 20px;  
 }
+.titulo h3{
+  color: #031926;
+  font-weight:600;
+}
 .item ion-input{
   width: 80%;
 }
@@ -46,4 +69,21 @@
   display: flex;
   justify-content:flex-start;
 }
+.titulo{
+  display: flex;
+  align-content: center;
+}
+.pato{
+  background-color:#f4e9cd;
+}
 
+.cancelar{
+  --background:#77aca2;
+}
+.ingresar{
+  --background:#468189;
+}
+.recuperar ion-button{
+  color:#468189;
+  font-size: small;
+}

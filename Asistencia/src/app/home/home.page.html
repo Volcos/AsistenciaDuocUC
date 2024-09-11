@@ -1,9 +1,11 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Asistencia
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+      <div class="barra">
+        <ion-title >
+          Asistencia
+        </ion-title>
+      </div>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -13,34 +15,33 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <div class="inicio">
-      <div class="item titulo">
-        <h3>
-          Iniciar Sesión
-        </h3>
-      </div>
-      <div class="item usuario">
-        <div class="label">
-          <ion-label>Usuario</ion-label>
+  <div class="fondo">
+    <div id="container">
+      <div class="inicio">
+        <div class="item titulo">
+          <h3>
+            Iniciar Sesión
+          </h3>
         </div>
-        <ion-input [(ngModel)]="usuario"></ion-input>
-      </div>
-      <div class="item contrasena">
-        <div class="label">
-          <ion-label>Usuario</ion-label>
+        <div class="item usuario">
+          <ion-input label="Usuario" label-placement="floating" 
+          fill="outline" [(ngModel)]="usuario" ></ion-input>
         </div>
-        <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
-      </div>
-      <div class="item recuperar">
-        <ion-button fill="clear" (click)="recuContra()">¿Olvidaste tu contraseña?</ion-button>
-      </div>
-      <div class="item">
-        <div class="botones">
-          <ion-button color="danger">Cancelar</ion-button>
-          <ion-button color="success" (click)="sigPagina()">Ingresar</ion-button>
+        <div class="item contrasena">
+          <ion-input label="Contraseña" label-placement="floating" 
+          fill="outline" [(ngModel)]="contrasena" ></ion-input>
+        </div>
+        <div class="item">
+          <div class="botones">
+            <ion-button class="cancelar">Cancelar</ion-button>
+            <ion-button class="ingresar" (click)="sigPagina()">Ingresar</ion-button>
+          </div>
+        </div>
+        <div class="item recuperar">
+          <ion-button fill="clear" (click)="recuContra()">¿Olvidaste tu contraseña?</ion-button>
         </div>
       </div>
     </div>
   </div>
+  
 </ion-content>
