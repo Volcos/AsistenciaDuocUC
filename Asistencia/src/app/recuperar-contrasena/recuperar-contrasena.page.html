@@ -1,6 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Recuperar Contrasena</ion-title>
+    <div class="barra">
+      <ion-title>Recuperar Contrasena</ion-title>
+    </div>
   </ion-toolbar>
 </ion-header>
 
@@ -14,15 +16,13 @@
     <div class="container">
       <h1>Recuperar contraseña</h1>
       <div class="usuario">
-        <div class="item label">
-          <ion-label>Usuario</ion-label>
-        </div>
-        <div class="item input">
-          <ion-input [(ngModel)]="usuario" ></ion-input>
+        <div class="item usuario">
+          <ion-input label="Usuario" label-placement="floating" 
+          fill="outline" [(ngModel)]="usuario" ></ion-input>
         </div>
       </div>
       <div class="button">
-        <ion-button (click)="recuperar()">Recuperar</ion-button>
+        <ion-button (click)="recuperar()" class="recuperar">Recuperar</ion-button>
       </div>
     </div>
   </div>

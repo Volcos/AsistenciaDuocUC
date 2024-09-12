@@ -1,8 +1,22 @@
+/*
+PALETA DE COLORES PRUEBA
+#f4e9cd
+#9DBEBB
+#77aca2
+#468189
+#031926
+*/
+
 .main{
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color:#9DBEBB ;
+}
+.barra{
+    background-color: #ececea;
+    height: 58px;
 }
 
 .container{
@@ -10,11 +24,19 @@
     flex-direction: column;
     justify-content: space-between;
     height: 60%;
-    background-color: rgb(204, 204, 204);
+    background-color:#ececea;
     padding: 4rem;
+    border-radius: 15px;
+}
+.container h1{
+    color:#031926;
+    font-weight: 600;
 }
 .button{
     display: flex;
     justify-content: center;
 }
 
+.recuperar{
+    --background:#77aca2;
+  }

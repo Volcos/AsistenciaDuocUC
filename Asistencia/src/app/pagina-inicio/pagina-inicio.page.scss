@@ -12,17 +12,18 @@
 }
 
 .contenedor {
-    height: 80%;
+    height: 100%;
     display: flex;
-    background-color: #F8F9FA;
+    background-color: #9DBEBB ;
     justify-content: center;
+    align-items: center;
     padding: 2rem;
 }
 
 .menu {
     padding: 3rem;
     border-radius: 15px;
-    background-color: gray;
+    background-color: #ececea;
     height: 50%;
 }
 
