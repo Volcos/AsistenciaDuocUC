@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <div class="barra">
-      <ion-title>Recuperar Contrasena</ion-title>
+      <ion-title class="cabecera">Recuperar Contrasena</ion-title>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -18,11 +18,17 @@
       <div class="usuario">
         <div class="item usuario">
           <ion-input label="Usuario" label-placement="floating" 
-          fill="outline" [(ngModel)]="usuario" ></ion-input>
+          fill="outline" [(ngModel)]="usuario" *ngIf="!flag"></ion-input>
+        </div>
+        <div class="item oculto" *ngIf="flag">
+          <ion-input label="Código" label-placement="floating" 
+          fill="outline" [(ngModel)]="codigo" ></ion-input>
         </div>
       </div>
       <div class="button">
-        <ion-button (click)="recuperar()" class="recuperar">Recuperar</ion-button>
+        <ion-button (click)="enviarCorreo()" class="recuperar" *ngIf="!flag">Enviar Correo</ion-button>
+        <ion-button (click)="validar()" class="recuperar" *ngIf="flag">Validar</ion-button>
+        <ion-button (click)="recuperar()" class="recuperar" *ngIf="valido">Recuperar</ion-button>
       </div>
     </div>
   </div>

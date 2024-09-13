@@ -1,32 +1,57 @@
+/*
+PALETA DE COLORES PRUEBA
+#f4e9cd
+#9DBEBB
+#77aca2
+#468189
+#031926
+*/
+.elements{
+    display: flex;
+    justify-content: space-between;
+}
 .cabecera {
-    background-color: #012C56;
+    background-color:#ececea;
     height: 100%;
 }
+.barraContenedor{
+    display: flex;
+}
+.barra{
+    width: 100%;
+    height: 58px;
+  }
 
 .bienvenida {
     display: flex;
-    font-size: 4rem;
-    font-weight: bold;
+    margin-bottom: 40px;
     justify-content: center;
-    text-decoration: underline;
+}
+.bienvenida h1{
+    color: #031926;
+    font-weight: 600;
 }
 
 .contenedor {
     height: 100%;
     display: flex;
+    flex-direction: column;
     background-color: #9DBEBB ;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
 }
 
 .menu {
     padding: 3rem;
     border-radius: 15px;
     background-color: #ececea;
-    height: 50%;
+    height: 21rem;
 }
-
+.tiempo{
+    display: flex;
+    justify-content: end;
+    
+}
 .item {
     display: flex;
     flex-direction: column;
@@ -35,4 +60,11 @@
 
 .bt {
     margin-top: 20px;
+}
+
+.cerrar{
+    --background:#468189;
+}
+.principal{
+    --background:#77aca2;
 }

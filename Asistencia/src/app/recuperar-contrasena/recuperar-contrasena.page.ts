@@ -10,10 +10,16 @@ import { NavController } from '@ionic/angular';
 export class RecuperarContrasenaPage implements OnInit {
 
   public usuario: string ="";
-
+  public flag: boolean =false;
+  public valido: boolean = false;
   constructor(private navCtrl: NavController) { }
-
+  public codigo: string ="";
   ngOnInit() {
+  }
+  enviarCorreo(){
+    if (this.usuario === "patito"){
+      this.flag = true;
+    }
   }
 
   recuperar(){
@@ -24,4 +30,9 @@ export class RecuperarContrasenaPage implements OnInit {
     }
   }
 
+  validar(){
+    if (this.codigo = "1234"){
+      this.valido = true;
+    }
+  }
 }

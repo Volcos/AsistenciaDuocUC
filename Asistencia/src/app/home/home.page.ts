@@ -13,7 +13,12 @@ export class HomePage {
   constructor(private navCtrl: NavController) {}
 
   sigPagina() {
-    this.navCtrl.navigateForward('/pagina-inicio');
+    const state = {
+      user: this.usuario
+    }
+    if (this.usuario == "patito" && this.contrasena == "1234"){
+      this.navCtrl.navigateForward('/pagina-inicio',{state});
+    }
   }
 
   antPagina() {
