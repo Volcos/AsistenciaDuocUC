@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,26 +12,19 @@ export class HomePage {
 
   public usuario: string = "";
   public contrasena: string ="";
-  constructor(private navCtrl: NavController) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   sigPagina() {
     const state = {
       user: this.usuario
     }
-    if (this.usuario == "patito" && this.contrasena == "1234"){
-      this.navCtrl.navigateForward('/pagina-inicio',{state});
+    if (this.authService.login(this.usuario,this.contrasena)){
+      this.router.navigate(['/pagina-inicio'],{state});
+    }else {
+      alert('NAoNAO');
     }
   }
-
-  antPagina() {
-    this.navCtrl.navigateBack('/home');
-  }
-
-  pagPrincipal() {
-    this.navCtrl.navigateRoot('/home');
-  }
-
   recuContra(){
-    this.navCtrl.navigateForward('/recuperar-contrasena')
+    this.router.navigate(['/recuperar-contrasena'])
   }
 }
