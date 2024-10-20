@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
-import { CanMatchFn } from '@angular/router';
+import { CanMatch } from '@angular/router';
 
 import { canmatchGuard } from './canmatch.guard';
 
 describe('canmatchGuard', () => {
-  const executeGuard: CanMatchFn = (...guardParameters) => 
+  const executeGuard: CanMatch = (...guardParameters) => 
       TestBed.runInInjectionContext(() => canmatchGuard(...guardParameters));
 
   beforeEach(() => {
