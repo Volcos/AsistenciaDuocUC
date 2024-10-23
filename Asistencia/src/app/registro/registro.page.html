@@ -1,0 +1,13 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-input label="correo" [(ngModel)]="correo"></ion-input>
+  <ion-input label="contraseña" [(ngModel)]="contrasena"></ion-input>
+
+  <ion-button fill="clear" (click)="guardarRegistro()">Registrar</ion-button>
+
+</ion-content>
