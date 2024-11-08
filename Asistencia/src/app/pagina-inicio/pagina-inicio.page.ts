@@ -3,6 +3,8 @@ import { NavController } from '@ionic/angular';
 import {Router} from '@angular/router';
 import * as moment from 'moment';
 import { JsonApiService } from '../services/json-api.service';
+
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-pagina-inicio',
   templateUrl: './pagina-inicio.page.html',
@@ -12,7 +14,9 @@ export class PaginaInicioPage implements OnInit {
   datos:any;
   time: string = '';
   asignaturas: any[] = [];
-  constructor(private navCtrl: NavController,private router:Router, private jsonaApiService: JsonApiService) { }
+  constructor(private navCtrl: NavController,private router:Router, private jsonaApiService: JsonApiService,
+    private authService: AuthService
+  ) { }
   
   ngOnInit() {
     const navegacion = this.router.getCurrentNavigation();
@@ -33,10 +37,12 @@ export class PaginaInicioPage implements OnInit {
   }
 
   antPagina() {
+    this.authService.logout();
     this.navCtrl.navigateBack('/home');
   }
 
   pagPrincipal() {
+    this.authService.logout();
     this.navCtrl.navigateRoot('/home');
   }
 

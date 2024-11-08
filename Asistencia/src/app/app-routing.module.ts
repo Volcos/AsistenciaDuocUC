@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 import { CanmatchGuard } from './canmatch.guard';
+import { CanDeactivateGuard } from './candeactivate.guard';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
   {
     path: 'pagina-inicio',
     loadChildren: () => import('./pagina-inicio/pagina-inicio.module').then( m => m.PaginaInicioPageModule),
-    canMatch: [CanmatchGuard]
+    canMatch: [CanmatchGuard],
+    canDeactivate: [CanDeactivateGuard]
   },
   {
     path: 'recuperar-contrasena',
@@ -25,7 +27,8 @@ const routes: Routes = [
   {
     path: 'not-found',
     loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
-  },  {
+  },
+  {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },

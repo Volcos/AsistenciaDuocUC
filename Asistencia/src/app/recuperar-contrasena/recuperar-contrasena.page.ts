@@ -19,7 +19,7 @@ export class RecuperarContrasenaPage implements OnInit {
   enviarCorreo(){
     if (this.usuario === "patito"){
       this.flag = true;
-      this.apiService.enviarCorreo('be.vargast@duocuc.cl','mi primer correo que emocion', '<p>This is a test email</p>')
+      this.apiService.enviarCorreo('be.vargast@duocuc.cl','Recuperación de contraseña', '<p>Su código de recuperación es: 1234</p>')
         .subscribe({
           next: response => console.log('Salio mal D:', response),
           error: error => console.error('Error sending email', error)
