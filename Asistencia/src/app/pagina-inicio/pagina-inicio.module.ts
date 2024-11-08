@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PaginaInicioPageRoutingModule } from './pagina-inicio-routing.module';
 
 import { PaginaInicioPage } from './pagina-inicio.page';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PaginaInicioPageRoutingModule
+    PaginaInicioPageRoutingModule,
+    MatTabsModule 
   ],
   declarations: [PaginaInicioPage]
 })

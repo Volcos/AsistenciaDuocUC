@@ -45,7 +45,7 @@ PALETA DE COLORES PRUEBA
     padding: 3rem;
     border-radius: 15px;
     background-color: #ececea;
-    height: 21rem;
+    height: 25rem;
 }
 .tiempo{
     display: flex;
@@ -68,3 +68,21 @@ PALETA DE COLORES PRUEBA
 .principal{
     --background:#77aca2;
 }
+
+// Tablas de horarios
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  

@@ -1,0 +1,10 @@
+{
+    "usuarios":[
+        {"id":1, "correo": "be.vargast@duocuc.cl", "asignaturas":[
+            {"nombre":"Matemáticas","horario":"8:00-9:30", "asistencia":"Presente"},
+            {"nombre":"Lenguaje","horario":"9:45-11:15", "asistencia":"Presente"},
+            {"nombre":"Ciencias","horario":"11:30-13:00", "asistencia":"Presente"},
+            {"nombre":"Historia","horario":"14:00-15:30", "asistencia":"Ausente"}
+        ]}
+    ]
+}

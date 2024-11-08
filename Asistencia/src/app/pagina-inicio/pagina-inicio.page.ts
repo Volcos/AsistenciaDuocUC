@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import {Router} from '@angular/router';
 import * as moment from 'moment';
+import { JsonApiService } from '../services/json-api.service';
 @Component({
   selector: 'app-pagina-inicio',
   templateUrl: './pagina-inicio.page.html',
@@ -10,13 +11,17 @@ import * as moment from 'moment';
 export class PaginaInicioPage implements OnInit {
   datos:any;
   time: string = '';
-  constructor(private navCtrl: NavController,private router:Router) { }
+  asignaturas: any[] = [];
+  constructor(private navCtrl: NavController,private router:Router, private jsonaApiService: JsonApiService) { }
   
   ngOnInit() {
     const navegacion = this.router.getCurrentNavigation();
     this.datos= navegacion?.extras?.state?.['user'];
     this.updateTime();
     setInterval(()=>this.updateTime(),1000);
+    this.jsonaApiService.getAsignaturasDelUsuario(1).subscribe(data => {
+      this.asignaturas = data;
+    });
   }
 
   updateTime(){
