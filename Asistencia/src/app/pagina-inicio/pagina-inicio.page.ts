@@ -5,6 +5,9 @@ import * as moment from 'moment';
 import { JsonApiService } from '../services/json-api.service';
 
 import { AuthService } from '../auth.service';
+
+import {Camera, CameraResultType, CameraSource} from '@capacitor/camera';
+
 @Component({
   selector: 'app-pagina-inicio',
   templateUrl: './pagina-inicio.page.html',
@@ -14,10 +17,26 @@ export class PaginaInicioPage implements OnInit {
   datos:any;
   time: string = '';
   asignaturas: any[] = [];
+
+  image: string | undefined;
+
   constructor(private navCtrl: NavController,private router:Router, private jsonaApiService: JsonApiService,
     private authService: AuthService
   ) { }
   
+  //Metodo para la fotooo
+
+  async tomarFoto(){
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: false,
+      resultType: CameraResultType.DataUrl,
+      source: CameraSource.Camera
+    });
+
+    this.image = image.dataUrl;
+  }
+
   ngOnInit() {
     const navegacion = this.router.getCurrentNavigation();
     this.datos= navegacion?.extras?.state?.['user'];

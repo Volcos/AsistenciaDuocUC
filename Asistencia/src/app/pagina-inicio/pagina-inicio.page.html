@@ -37,7 +37,7 @@
       <mat-tab-group>
         <mat-tab label="Código QR"> 
           <div class="item bt">
-            <ion-button fill="outline" color="dark">Escanear QR</ion-button>
+            <ion-button (click)="tomarFoto()" fill="outline" color="dark">Escanear QR</ion-button>
           </div>
           <div class="item bt">
             <ion-button class="cerrar" (click)="antPagina()">Cerrar Sesión</ion-button>
