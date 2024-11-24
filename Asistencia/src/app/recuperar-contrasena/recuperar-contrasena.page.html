@@ -12,23 +12,30 @@
       <ion-title size="large">RecuperarContrasena</ion-title>
     </ion-toolbar>
   </ion-header>
+
   <div class="main">
     <div class="container">
-      <h1>Recuperar contraseña</h1>
-      <div class="usuario">
+      <div class="inicio">
+        <div class="titulo">
+          <h1>Recuperar contraseña</h1>
+        </div>
         <div class="item usuario">
-          <ion-input label="Usuario" label-placement="floating" 
-          fill="outline" [(ngModel)]="usuario" *ngIf="!flag"></ion-input>
+          <div class="item usuario">
+            <ion-input label="Usuario" label-placement="floating" 
+            fill="outline" [(ngModel)]="usuario" *ngIf="!flag"></ion-input>
+          </div>
+          <div class="item oculto" *ngIf="flag">
+            <ion-input label="Código" label-placement="floating" 
+            fill="outline" [(ngModel)]="codigo" ></ion-input>
+          </div>
         </div>
-        <div class="item oculto" *ngIf="flag">
-          <ion-input label="Código" label-placement="floating" 
-          fill="outline" [(ngModel)]="codigo" ></ion-input>
+        <div class="item">
+          <div class="button">
+            <ion-button (click)="enviarCorreo()" class="recuperar" *ngIf="!flag">Enviar Correo</ion-button>
+            <ion-button (click)="validar()" class="recuperar" *ngIf="flag">Validar</ion-button>
+            <ion-button (click)="recuperar()" class="recuperar" *ngIf="valido">Recuperar</ion-button>
+          </div>
         </div>
-      </div>
-      <div class="button">
-        <ion-button (click)="enviarCorreo()" class="recuperar" *ngIf="!flag">Enviar Correo</ion-button>
-        <ion-button (click)="validar()" class="recuperar" *ngIf="flag">Validar</ion-button>
-        <ion-button (click)="recuperar()" class="recuperar" *ngIf="valido">Recuperar</ion-button>
       </div>
     </div>
   </div>

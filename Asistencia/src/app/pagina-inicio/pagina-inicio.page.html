@@ -26,43 +26,44 @@
     </ion-toolbar>
   </ion-header>
   
-  
-  <div class="contenedor">
-    <div class="menu">
-      <div class="item bienvenida">
-        <h4>
-          Bienvenido {{datos}}
-        </h4>
+  <div class="fondo">
+    <div class="contenedor">
+      <div class="menu">
+        <div class="item bienvenida">
+          <h4>
+            Bienvenido {{datos}}
+          </h4>
+        </div>
+        <mat-tab-group>
+          <mat-tab label="Código QR"> 
+            <div class="item bt">
+              <ion-button (click)="startScan()" fill="outline" color="">Escanear QR</ion-button>
+            </div>
+            <div class="item bt">
+              <ion-button class="cerrar" (click)="antPagina()">Cerrar Sesión</ion-button>
+              <ion-button class="principal" (click)="pagPrincipal()">Menu principal</ion-button>
+            </div>
+          </mat-tab>
+          <mat-tab label="Asistencia"> 
+            <table>
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Horario</th>
+                  <th>Asistencia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let asignatura of asignaturas">
+                  <td>{{ asignatura.nombre }}</td>
+                  <td>{{ asignatura.horario }}</td>
+                  <td>{{ asignatura.asistencia }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </mat-tab>
+        </mat-tab-group>
       </div>
-      <mat-tab-group>
-        <mat-tab label="Código QR"> 
-          <div class="item bt">
-            <ion-button (click)="startScan()" fill="outline" color="dark">Escanear QR</ion-button>
-          </div>
-          <div class="item bt">
-            <ion-button class="cerrar" (click)="antPagina()">Cerrar Sesión</ion-button>
-            <ion-button class="principal" (click)="pagPrincipal()">Menu principal</ion-button>
-          </div>
-        </mat-tab>
-        <mat-tab label="Asistencia"> 
-          <table>
-            <thead>
-              <tr>
-                <th>Nombre</th>
-                <th>Horario</th>
-                <th>Asistencia</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let asignatura of asignaturas">
-                <td>{{ asignatura.nombre }}</td>
-                <td>{{ asignatura.horario }}</td>
-                <td>{{ asignatura.asistencia }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </mat-tab>
-      </mat-tab-group>
     </div>
   </div>
 </ion-content>

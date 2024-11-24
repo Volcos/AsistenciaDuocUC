@@ -7,39 +7,65 @@ PALETA DE COLORES PRUEBA
 #031926
 */
 
-.main{
+.main {
     height: 100%;
-    display: flex;
+    background-color: #9DBEBB;
     justify-content: center;
     align-items: center;
-    background-color:#9DBEBB ;
+    display: flex;
 }
-.barra{
+
+.barra {
+    width: 100%;
     height: 58px;
 }
+
 .cabecera {
-    background-color:#ececea;
     height: 100%;
 }
 
-.container{
+.container {
+    width: 70vh;
+    height: 70vh;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.inicio {
+    padding: 2rem;
+    color: black;
+    border-radius: 3%;
+    height: 80%;
+    width: 80%;
+}
+
+.item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 60%;
-    background-color:#ececea;
-    padding: 4rem;
-    border-radius: 15px;
+    align-items: center;
+    margin-top: 2%;
+    color: black;
 }
-.container h1{
-    color:#031926;
+
+.container h1 {
+    color: #031926;
     font-weight: 600;
 }
-.button{
+
+.usuario {
+    font-size: clamp(15px, 4vw, 20px);
+}
+
+.button {
     display: flex;
     justify-content: center;
 }
 
-.recuperar{
-    --background:#77aca2;
-  }
+.recuperar {
+    --background: #77aca2;
+    font-size: clamp(10px, 4vw, 15px);
+}

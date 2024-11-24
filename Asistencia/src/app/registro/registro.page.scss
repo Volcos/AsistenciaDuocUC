@@ -1,35 +1,34 @@
 .main {
     height: 100%;
-    display: flex;
+    background-color: #9DBEBB;
     justify-content: center;
     align-items: center;
-    background-color: #9DBEBB;
-}
-
-h1 {
-    text-align: center;
-    text-decoration: underline;
+    display: flex;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
+    width: 70vh;
+    height: 70vh;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
     justify-content: center;
-    height: auto;
-    background-color: #ececea;
-    padding: 4rem;
-    border-radius: 15px;
+    align-items: center;
+    display: flex;
 }
 
-.campos {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+.inicio {
+    padding: 2rem;
+    color: black;
+    border-radius: 3%;
+    height: 80%;
+    width: 80%;
 }
 
 .container h1 {
     color: #031926;
     font-weight: 600;
+    font-size: clamp(25px, 4vw, 30px)
 }
 
 .button {
@@ -39,6 +38,7 @@ h1 {
     width: 50%;
     color: #031926;
     border-radius: 5px;
+    font-size: clamp(15px, 4vw, 20px)
 }
 
 .registro {

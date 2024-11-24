@@ -8,19 +8,21 @@
 
   <div class="main">
     <div class="container">
-      <div>
-        <h1>Registro</h1>
-      </div>
-      <div class="campos">
-        <div class="registro">
-          <ion-input label="Correo:" label-placement="floating" fill="outline" [(ngModel)]="correo"></ion-input>
+      <div class="inicio">
+        <div>
+          <h1>Registro</h1>
         </div>
-  
-        <div class="registro">
-          <ion-input label="Contraseña:" label-placement="floating" fill="outline" [(ngModel)]="contrasena"></ion-input>
-        </div>
-        <div class="boton">
-          <ion-button fill="clear" (click)="guardarRegistro()">Registrar</ion-button>
+        <div class="campos">
+          <div class="registro">
+            <ion-input label="Correo:" label-placement="floating" fill="outline" [(ngModel)]="correo"></ion-input>
+          </div>
+    
+          <div class="registro">
+            <ion-input label="Contraseña:" label-placement="floating" fill="outline" [(ngModel)]="contrasena"></ion-input>
+          </div>
+          <div class="boton">
+            <ion-button fill="clear" (click)="guardarRegistro()">Registrar</ion-button>
+          </div>
         </div>
       </div>
     </div>
