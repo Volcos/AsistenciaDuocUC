@@ -1,0 +1,71 @@
+.elements{
+    display: flex;
+    justify-content: space-between;
+}
+.cabecera {
+    background-color:#ececea;
+    height: 100%;
+}
+.barraContenedor{
+    display: flex;
+}
+.barra{
+    width: 100%;
+    height: 58px;
+  }
+
+.bienvenida {
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+.bienvenida h1{
+    color: #031926;
+    font-weight: 600;
+}
+
+.contenedor {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #9DBEBB ;
+    justify-content:space-evenly;
+    align-items: center;
+}
+
+.menu {
+    padding: 3rem;
+    border-radius: 15px;
+    background-color: #ececea;
+    height: 25rem;
+}
+.tiempo{
+    display: flex;
+    justify-content: end;
+    
+}
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bt {
+    margin-top: 20px;
+}
+
+.cerrar{
+    --background:#468189;
+}
+.principal{
+    --background:#77aca2;
+}
+
+// DISEÑO CODIGO QR
+
+.qr{
+    padding: 3rem;
+    border-radius: 15px;
+    background-color: #ececea;
+    height: 25rem;
+}

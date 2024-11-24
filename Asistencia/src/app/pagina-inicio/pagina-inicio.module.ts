@@ -8,6 +8,7 @@ import { PaginaInicioPageRoutingModule } from './pagina-inicio-routing.module';
 
 import { PaginaInicioPage } from './pagina-inicio.page';
 import { MatTabsModule } from '@angular/material/tabs';
+import { BarcodeScanningModalComponent } from './barcode-scanning-modal.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { MatTabsModule } from '@angular/material/tabs';
     PaginaInicioPageRoutingModule,
     MatTabsModule 
   ],
-  declarations: [PaginaInicioPage]
+  declarations: [PaginaInicioPage,BarcodeScanningModalComponent]
 })
 export class PaginaInicioPageModule {}

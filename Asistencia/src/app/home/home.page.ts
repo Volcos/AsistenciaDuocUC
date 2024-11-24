@@ -24,11 +24,16 @@ export class HomePage {
     const state = {
       user: this.usuario
     }
+    
     if (await this.authService.login(this.usuario,this.contrasena)){
       this.router.navigate(['/pagina-inicio'],{state});
     }else {
       alert('NAoNAO');
     }
+  }
+  //////////////BORRAR ESTE BOTON ESTA DE PRUEBAS NOMAS
+  botonBorrar(){
+    this.router.navigate(['/registro'])
   }
 
   recuContra(){
