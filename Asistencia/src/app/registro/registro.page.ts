@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+import { UsuarioService } from '../services/usuario.service';
 
 @Component({
   selector: 'app-registro',
@@ -11,25 +12,34 @@ export class RegistroPage implements OnInit {
   public correo: string = "";
   public contrasena: String = "";
 
-  constructor(private storage: Storage) {
-    this.initStorage();
-  }
+  // constructor(private storage: Storage) {
+  //   this.initStorage();
+  // }
+  constructor(private usuarioService: UsuarioService) {}
 
-  async initStorage(){
-    await this.storage.create();
-  }
+  // async initStorage(){
+  //   await this.storage.create();
+  // }
 
   ngOnInit() {
   }
 
-  guardarRegistro() {
-    
-    this.storage.set(this.correo, this.contrasena)
-    console.log('Guardadisimo')
+  async guardarRegistro() {
+    const usuario = {
+      correo: this.correo,
+      password: this.contrasena,
+    };
+
+    try {
+      const resultado = await this.usuarioService.guardarUsuario(usuario);
+      console.log('Guardado en la base de datos:', resultado);
+    } catch (error) {
+      console.error('Error al guardar usuario:', error);
+    }
   }
 
-  async limpiarStorage() {
-    await this.storage.clear();
-    console.log('Almacenamiento limpiado');
-    }
+  // async limpiarStorage() {
+  //   await this.storage.clear();
+  //   console.log('Almacenamiento limpiado');
+  //   }
 }
