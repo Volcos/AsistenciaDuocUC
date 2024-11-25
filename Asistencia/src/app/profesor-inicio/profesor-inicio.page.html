@@ -23,28 +23,27 @@
       <ion-title size="large">ProfesorInicio</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div class="fondo">
-    <div class="contenedor">
-      <div class="qr" *ngIf="mostrarQr">
-        <qr-code value="https://cpk78c3z-8100.brs.devtunnels.ms/confirmacion-asistencia" 
-           size="300" 
-           errorCorrectionLevel="M" />
+<div class="fondo">
+  <div class="qr" *ngIf="mostrarQr">
+    <qr-code class="codigo" value="https://cpk78c3z-8100.brs.devtunnels.ms/confirmacion-asistencia" 
+       size="300" 
+       errorCorrectionLevel="M" />
+  </div>
+  <div class="contenedor">
+    <div class="menu">
+      <div class="item bienvenida">
+        <h4>
+          Bienvenido {{datos}}
+        </h4>
       </div>
-      <div class="menu">
-        <div class="item bienvenida">
-          <h4>
-            Bienvenido {{datos}}
-          </h4>
-        </div>
-            <div class="item bt">
-              <ion-button fill="outline" color="" (click)="mostrarCodigo()">Generar QR</ion-button>
-            </div>
-            <div class="item bt">
-              <ion-button class="cerrar" (click)="antPagina()" >Cerrar Sesión</ion-button>
-              <ion-button class="principal" (click)="cerrarCodigo()" >Menu principal</ion-button>
-            </div>
-      </div>
+          <div class="item bt">
+            <ion-button fill="outline" color="dark" (click)="mostrarCodigo()">Generar QR</ion-button>
+          </div>
+          <div class="item bt">
+            <ion-button class="cerrar" (click)="antPagina()" >Cerrar Sesión</ion-button>
+            <ion-button class="principal" (click)="cerrarCodigo()" >Menu principal</ion-button>
+          </div>
     </div>
   </div>
+</div>
 </ion-content>

@@ -1,14 +1,14 @@
+/*
+PALETA DE COLORES PRUEBA
+#f4e9cd
+#9DBEBB
+#77aca2
+#468189
+#031926
+*/
 .elements{
     display: flex;
     justify-content: space-between;
-}
-
-.fondo {
-    height: 100%;
-    background-color: #9DBEBB;
-    justify-content: center;
-    align-items: center;
-    display: flex;
 }
 
 .cabecera {
@@ -28,48 +28,86 @@
     display: flex;
     margin-bottom: 40px;
     justify-content: center;
-    color: black;
 }
 
-.bienvenida h1{
+.bienvenida h4{
     color: #031926;
     font-weight: 600;
 }
 
+.fondo {
+    width: 100vw;
+    height: 100vh;
+    background-color: #9DBEBB;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+}
+
+@media (max-width: 950px) {
+    .fondo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}
+
+// =================CONTENEDOR===========================
 .contenedor {
-    width: 85vh;
-    height: 75vh;
-    background-color: white;
-    border-radius: 10px;
+    width: 25rem;
+    height: 30rem;
+    background-color: #ececea;
+    border-radius: 15px;
     text-align: center;
     justify-content: center;
     align-items: center;
     display: flex;
 }
 
-@media (max-width: 768px) {
-
-    /* Cambia el tamaño según lo que necesites */
+@media (min-width: 1500px) {
     .contenedor {
-        flex-direction: column;
-        height: 90vh;
-        /* Orientación horizontal: uno al lado del otro */
+      width: 30rem;
+      height: 32rem;
+    }
+}
+  
+@media (max-width: 750px) {
+    .contenedor {
+        width: 63vw;
+        height: 50vh;
+    }
+}
+  
+@media (max-width: 430px) {
+    .contenedor {
+        width: 87vw;
+        height: 45vh;
+    }
+}
+  
+@media (max-height: 830px) {
+    .contenedor {
+        height: 60vh;
+    }
+}
+  
+@media (max-height: 675px) {
+    .contenedor {
+        height: 70vh;
     }
 }
 
+//================================================
 .menu {
-    padding: 3rem;
-    border-radius: 15px;
-    background-color: #ececea;
-    height: 25rem;
+    padding: 2rem;
+    height: 80%;
+    width: 80%;
 }
-
 .tiempo{
     display: flex;
     justify-content: end;
     
 }
-
 .item {
     display: flex;
     flex-direction: column;
@@ -84,16 +122,65 @@
 .cerrar{
     --background:#468189;
 }
-
 .principal{
     --background:#77aca2;
 }
 
-// DISEÑO CODIGO QR
-
 .qr{
-    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
     border-radius: 15px;
-    background-color: #000000;
+    background-color: #ececea;
     height: 25rem;
+}
+
+.qr .codigo canvas{
+    width: 300px !important;
+    height: 300px !important;
+}
+
+@media (min-width: 1500px) {
+    .qr {
+      width: 30rem;
+      height: 32rem;
+    }
+}
+  
+@media (max-width: 750px) {
+    .qr {
+        width: 63vw;
+        height: 45vh;
+    }
+
+    .codigo{
+        --width: 200px !important;
+    }
+}
+
+@media (max-width: 590px) {
+    .qr .codigo canvas{
+        width: 250px !important;
+        height: 250px !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .qr {
+        width: 87vw;
+        height: 35vh;
+    }
+}
+  
+@media (max-height: 830px) {
+    .qr {
+        height: 60vh;
+    }
+}
+  
+@media (max-height: 675px) {
+    .qr {
+        height: 70vh;
+    }
 }

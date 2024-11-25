@@ -14,7 +14,7 @@ export class CanmatchGuard implements CanMatch {
     if (this.authService.isLoggedIn()){
       return true;
     }else {
-      this.router.navigate(['/not-found']);
+      this.router.navigate(['/home']);
       return false;
     }
   }

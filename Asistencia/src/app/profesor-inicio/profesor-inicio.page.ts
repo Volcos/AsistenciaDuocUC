@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewEncapsulation } from '@angular/core';
 
 import { NavController } from '@ionic/angular';
 import {Router} from '@angular/router';
@@ -11,6 +11,7 @@ import { AuthService } from '../auth.service';
   selector: 'app-profesor-inicio',
   templateUrl: './profesor-inicio.page.html',
   styleUrls: ['./profesor-inicio.page.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProfesorInicioPage implements OnInit {
 

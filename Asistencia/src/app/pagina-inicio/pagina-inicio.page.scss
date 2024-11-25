@@ -28,10 +28,9 @@ PALETA DE COLORES PRUEBA
     display: flex;
     margin-bottom: 40px;
     justify-content: center;
-    color: black;
 }
 
-.bienvenida h1{
+.bienvenida h4{
     color: #031926;
     font-weight: 600;
 }
@@ -43,23 +42,56 @@ PALETA DE COLORES PRUEBA
     align-items: center;
     display: flex;
 }
-
+// =================CONTENEDOR===========================
 .contenedor {
-    width: 70vh;
-    height: 70vh;
-    background-color: white;
-    border-radius: 10px;
+    width: 25rem;
+    height: 30rem;
+    background-color: #ececea;
+    border-radius: 15px;
     text-align: center;
     justify-content: center;
     align-items: center;
     display: flex;
 }
 
+@media (min-width: 1500px) {
+    .contenedor {
+      width: 30rem;
+      height: 32rem;
+    }
+  }
+  
+  @media (max-width: 750px) {
+    .contenedor {
+      width: 63vw;
+      height: 50vh;
+    }
+  }
+  
+  @media (max-width: 430px) {
+    .contenedor {
+      width: 87vw;
+      height: 50vh;
+    }
+  }
+  
+  @media (max-height: 830px) {
+    .contenedor {
+      height: 60vh;
+    }
+  }
+  
+  @media (max-height: 675px) {
+    .contenedor {
+      height: 70vh;
+    }
+  }
+
+//================================================
 .menu {
-    padding: 3rem;
-    border-radius: 15px;
-    background-color: #ececea;
-    height: 25rem;
+    padding: 2rem;
+    height: 80%;
+    width: 80%;
 }
 .tiempo{
     display: flex;

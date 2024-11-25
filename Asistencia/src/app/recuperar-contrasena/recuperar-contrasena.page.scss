@@ -25,17 +25,54 @@ PALETA DE COLORES PRUEBA
 }
 
 .container {
-    width: 70vh;
-    height: 70vh;
-    background-color: white;
-    border-radius: 10px;
+    width: 28rem;
+    height: 30rem;
+    background-color: #ececea;
+    border-radius: 15px;
     text-align: center;
     justify-content: center;
     align-items: center;
     display: flex;
 }
 
+@media (min-width: 1500px) {
+    .container {
+        width: 33rem;
+        height: 32rem;
+    }
+}
+  
+@media (max-width: 750px) {
+    .container {
+        width: 63vw;
+        height: 50vh;
+    }
+}
+
+@media (max-width: 430px) {
+    .container {
+        width: 87vw;
+        height: 50vh;
+    }
+}
+
+@media (max-height: 830px) {
+    .container {
+        height: 60vh;
+    }
+}
+
+@media (max-height: 675px) {
+    .container {
+        height: 70vh;
+    }
+}
+
+
 .inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     padding: 2rem;
     color: black;
     border-radius: 3%;
@@ -54,10 +91,12 @@ PALETA DE COLORES PRUEBA
 .container h1 {
     color: #031926;
     font-weight: 600;
+    font-size: clamp(25px, 4vw, 30px);
+
 }
 
 .usuario {
-    font-size: clamp(15px, 4vw, 20px);
+    font-size: clamp(10px, 4vw, 15px);
 }
 
 .button {
