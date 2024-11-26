@@ -25,7 +25,7 @@ export class HomePage {
   async iniciarSesion() {
     try {
       const resultado = await this.authService.login(this.correo, this.contrasena);
-      
+      const resultadoLocal = await this.authService.loginStorage(this.correo,this.contrasena);
       if (resultado) {
         console.log('Login exitoso. Redirigiendo...');
 
@@ -43,7 +43,10 @@ export class HomePage {
                 // Tipo de usuario desconocido
                 alert('Tipo de usuario no reconocido.');
             }
-
+      } else if (resultadoLocal) {
+        this.router.navigate(['/pagina-inicio'], {
+          state: { correo: this.correo },
+        });
       } else {
         alert('Credenciales incorrectas. Por favor, inténtalo de nuevo.');
       }

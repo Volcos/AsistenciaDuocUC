@@ -13,14 +13,14 @@ export class RegistroPage implements OnInit {
   public correo: string = "";
   public contrasena: String = "";
 
-  // constructor(private storage: Storage) {
-  //   this.initStorage();
-  // }
-  constructor(private usuarioService: UsuarioService, private navCtrl: NavController,) {}
+  
+  constructor(private usuarioService: UsuarioService, private navCtrl: NavController,private storage: Storage) {
+    this.initStorage();
+  }
 
-  // async initStorage(){
-  //   await this.storage.create();
-  // }
+  async initStorage(){
+    await this.storage.create();
+  }
 
   ngOnInit() {
   }
@@ -30,7 +30,10 @@ export class RegistroPage implements OnInit {
       correo: this.correo,
       password: this.contrasena,
     };
-
+    
+    this.storage.set(this.correo,this.contrasena);
+    console.log('Nombre guardado:', this.correo);
+    
     try {
       const resultado = await this.usuarioService.guardarUsuario(usuario);
       console.log('Guardado en la base de datos:', resultado);
@@ -40,8 +43,8 @@ export class RegistroPage implements OnInit {
     }
   }
 
-  // async limpiarStorage() {
-  //   await this.storage.clear();
-  //   console.log('Almacenamiento limpiado');
-  //   }
+  async limpiarStorage() {
+    await this.storage.clear();
+    console.log('Almacenamiento limpiado');
+  }
 }

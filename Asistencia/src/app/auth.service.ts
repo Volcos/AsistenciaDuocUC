@@ -31,6 +31,25 @@ export class AuthService {
       return null;
     }
   }
+  async obtenerDatosLocal(correo: string){
+    let datos = await this.storage.get(correo);
+    return datos;
+  }
+
+  async loginStorage(username: string, password: string){
+    try {
+      if (password == await this.obtenerDatosLocal(username)){
+        this.isAuthenticated = true;
+        return true;
+      } else {
+        console.log('Contraseña incorrecta',await this.obtenerDatosLocal(username))
+        return false;
+      }
+    } catch (error) {
+      console.log(error)
+      return false;
+    }
+  }
 
   // VALIDAR LAS CREDENCIALES PARA LOGEARSE
   async login(correo: string, password: string) {
