@@ -9,12 +9,14 @@ import { AuthService } from '../auth.service';
 import { BarcodeScanningModalComponent } from './barcode-scanning-modal.component';
 import { LensFacing, BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
 
+import { CanComponentDeactivate } from '../candeactivate.guard'
+
 @Component({
   selector: 'app-pagina-inicio',
   templateUrl: './pagina-inicio.page.html',
   styleUrls: ['./pagina-inicio.page.scss'],
 })
-export class PaginaInicioPage implements OnInit {
+export class PaginaInicioPage implements OnInit, CanComponentDeactivate {
   datos:any;
   time: string = '';
   asignaturas: any[] = [];
@@ -62,7 +64,7 @@ export class PaginaInicioPage implements OnInit {
 
   ngOnInit() {
     const navegacion = this.router.getCurrentNavigation();
-    this.datos= navegacion?.extras?.state?.['user'];
+    this.datos= navegacion?.extras?.state?.['correo'];
     this.updateTime();
     setInterval(()=>this.updateTime(),1000);
     this.jsonaApiService.getAsignaturasDelUsuario(1).subscribe(data => {
@@ -84,14 +86,16 @@ export class PaginaInicioPage implements OnInit {
     this.navCtrl.navigateForward('/pagina-inicio');
   }
 
-  antPagina() {
-    this.authService.logout();
-    this.navCtrl.navigateBack('/home');
+  logout() {
+    if (this.canDeactivate()) {
+      this.authService.logout(); 
+      this.router.navigate(['/inicio']);
+      console.log("Sesion cerrada")
+    }
   }
 
-  pagPrincipal() {
-    this.authService.logout();
-    this.navCtrl.navigateRoot('/home');
+  canDeactivate(): boolean {
+    return confirm('¿Estás seguro que deseas cerrar sesión?');
   }
-
+    
 }

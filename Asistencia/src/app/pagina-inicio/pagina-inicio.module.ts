@@ -10,6 +10,8 @@ import { PaginaInicioPage } from './pagina-inicio.page';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BarcodeScanningModalComponent } from './barcode-scanning-modal.component';
 
+
+
 @NgModule({
   imports: [
     CommonModule,

@@ -3,10 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ProfesorInicioPage } from './profesor-inicio.page';
 
+import { CanDeactivateGuard } from '../candeactivate.guard';
+
 const routes: Routes = [
   {
     path: '',
-    component: ProfesorInicioPage
+    component: ProfesorInicioPage,
+    canDeactivate: [CanDeactivateGuard],
   }
 ];
 

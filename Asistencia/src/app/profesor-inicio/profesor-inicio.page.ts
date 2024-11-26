@@ -30,7 +30,7 @@ export class ProfesorInicioPage implements OnInit {
 
   ngOnInit() {
     const navegacion = this.router.getCurrentNavigation();
-    this.datos= navegacion?.extras?.state?.['user'];
+    this.datos= navegacion?.extras?.state?.['correo'];
     this.updateTime();
     setInterval(()=>this.updateTime(),1000);
   }
@@ -41,14 +41,16 @@ export class ProfesorInicioPage implements OnInit {
     this.navCtrl.navigateForward('/pagina-inicio');
   }
 
-  antPagina() {
-    this.authService.logout();
-    this.navCtrl.navigateBack('/home');
+  logout() {
+    if (this.canDeactivate()) {
+      this.authService.logout(); 
+      this.router.navigate(['/inicio']);
+      console.log("Sesion cerrada")
+    }
   }
 
-  pagPrincipal() {
-    this.authService.logout();
-    this.navCtrl.navigateRoot('/home');
+  canDeactivate(): boolean {
+    return confirm('¿Estás seguro que deseas cerrar sesión?');
   }
   // METODO PARA MOSTRAR Y CERRAR QR
 
