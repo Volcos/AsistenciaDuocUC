@@ -47,7 +47,7 @@ export class AuthService {
       // Si la validación es exitosa
       this.isAuthenticated = true;
       console.log('Login exitoso');
-      return true;
+      return usuario;
     } catch (error) {
         console.error('Error durante el login:', error);
         return false;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NavController} from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 import { UsuarioService } from '../services/usuario.service';
 
@@ -15,7 +16,7 @@ export class RegistroPage implements OnInit {
   // constructor(private storage: Storage) {
   //   this.initStorage();
   // }
-  constructor(private usuarioService: UsuarioService) {}
+  constructor(private usuarioService: UsuarioService, private navCtrl: NavController,) {}
 
   // async initStorage(){
   //   await this.storage.create();
@@ -33,6 +34,7 @@ export class RegistroPage implements OnInit {
     try {
       const resultado = await this.usuarioService.guardarUsuario(usuario);
       console.log('Guardado en la base de datos:', resultado);
+      this.navCtrl.navigateRoot('/home');
     } catch (error) {
       console.error('Error al guardar usuario:', error);
     }

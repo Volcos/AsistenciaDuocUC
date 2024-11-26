@@ -24,14 +24,26 @@ export class HomePage {
   
   async iniciarSesion() {
     try {
-      // Verifica las credenciales en el backend
-      // const datosUsuario = await this.usuarioService.verificarCredenciales(this.correo, this.contrasena);
       const resultado = await this.authService.login(this.correo, this.contrasena);
+      
       if (resultado) {
         console.log('Login exitoso. Redirigiendo...');
-        this.router.navigate(['/pagina-inicio'], {
-          state: { correo: this.correo },
-        });
+
+        if (resultado.tipo_usuario === 1) {
+                // Usuario administrador
+                this.router.navigate(['/profesor-inicio'], {
+                    state: { correo: resultado.correo },
+                });
+            } else if (resultado.tipo_usuario === 2) {
+                // Usuario regular
+                this.router.navigate(['/pagina-inicio'], {
+                    state: { correo: resultado.correo },
+                });
+            } else {
+                // Tipo de usuario desconocido
+                alert('Tipo de usuario no reconocido.');
+            }
+
       } else {
         alert('Credenciales incorrectas. Por favor, inténtalo de nuevo.');
       }
@@ -39,17 +51,7 @@ export class HomePage {
       console.error('Error al iniciar sesión:', error);
       alert('Ocurrió un problema en el servidor.');
     }
-    //   console.log('Login exitoso. Datos del usuario:', datosUsuario);
-
-    //   // Redirige a la página de inicio
-    //   this.router.navigate(['/pagina-inicio'], {
-    //   state: { correo: datosUsuario.usuario.correo },
-    //   });
-    // } catch (error) {
-    //     console.error('Error al iniciar sesión:', error);
-    //     alert('Credenciales incorrectas o problema en el servidor.');
-    // }
-  } 
+  }
 
   botonBorrar(){
     this.router.navigate(['/registro'])
